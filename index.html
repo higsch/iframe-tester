@@ -29,19 +29,12 @@
       },
       false);
     </script> -->
-
-    <style>
-      iframe {
-        width: 1px;
-        min-width: 100%;
-        border: none;
-      }
-    </style>
-    <script src="iframeResizer.min.js"></script>
+    <script src="https://geoecon.github.io/cbdc-tracker/iframeResizer.min.js"></script>
     <iframe
       id="cbdc-tracker"
-      src="https://higsch.github.io/cbdc-tracker-beta/"
-      onload="iFrameResize({ log: true, enablePublicMethods: true, heightCalculationMethod : 'lowestElement' }, '#cbdc-tracker')">
+      src="https://geoecon.github.io/cbdc-tracker/"
+      style="width: 1px; min-width: 100%; border: none;"
+      onload="iFrameResize({ heightCalculationMethod : 'lowestElement' }, '#cbdc-tracker')">
     </iframe>
   </body>
 </html>
