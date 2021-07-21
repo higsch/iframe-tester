@@ -10,6 +10,8 @@
       html, body {
         width: 100%;
         height: 100%;
+        margin: 0;
+        padding: 0;
       }
     </style>
   </head>
@@ -29,12 +31,32 @@
       },
       false);
     </script> -->
-    <script src="https://geoecon.github.io/cbdc-tracker/iframeResizer.min.js"></script>
+    
+    <!-- <script src="https://geoecon.github.io/cbdc-tracker/iframeResizer.min.js"></script>
     <iframe
       id="cbdc-tracker"
       src="https://geoecon.github.io/cbdc-tracker/"
       style="width: 1px; min-width: 100%; border: none;"
       onload="iFrameResize({ heightCalculationMethod : 'lowestElement' }, '#cbdc-tracker')">
-    </iframe>
+    </iframe> -->
+
+    <!-- <script src="https://geoecon.github.io/cbdc-tracker/iframeResizer.min.js"></script> -->
+    <script>
+      const params = window.location.search;
+      document.write("<iframe src=\"http://localhost:5000/?params=" + params + "\" id=\"cbdc-tracker\" style=\"width: 1px; min-width: 100%; border: none;\"></iframe>");
+      let iframe = document.querySelector('#cbdc-tracker');
+      window.addEventListener('message', function(e) {
+        let message = e.data;
+        iframe.style.height = message.height + 'px';
+        iframe.style.width = message.width + 'px';
+      },
+      false);
+    </script>
+    <!-- <iframe
+      id="cbdc-tracker"
+      src="http://localhost:5000/"
+      style="width: 1px; min-width: 100%; border: none;"
+      onload="iFrameResize({ heightCalculationMethod : 'lowestElement' }, '#cbdc-tracker')">
+    </iframe> -->
   </body>
 </html>
